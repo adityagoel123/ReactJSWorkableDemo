@@ -1,0 +1,54 @@
+<html>
+<head>
+	<!--
+	<script src="https://unpkg.com/react@15/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+	-->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>React</title>
+	
+	<link rel="stylesheet" type="text/css" href="src/styles/main.css">
+	<script src="src/js/react.js"></script>
+	<script src="src/js/react-dom.js"></script>
+	<script src="src/js/browser.js"></script>
+</head>
+<body>
+<div id='root'></div>
+<!--
+<script src="../scripts/app.js" type="text/babel"></script>  
+-->
+<script type="text/babel">
+	
+	var Comment = React.createClass({
+		edit: function(){
+			alert("Edit");	
+		},
+		remove: function(){
+			alert("Remove");	
+		},
+		render: function(){
+			return (
+				<div className="commentContainer">
+					<div className="commentText">{this.props.children}</div>
+					<button onClick={this.edit} className="button-primary">Edit</button>
+					<button onClick={this.remove} className="button-danger">Remove</button>
+				</div>
+			);
+		}
+		
+	});
+	
+	ReactDOM.render(
+		<div className="board">
+			<Comment>Hey, My name is Aditya.</Comment>
+			<Comment>Boiler-Plate</Comment>
+			<Comment>Gopher.</Comment>
+		</div>
+		,document.getElementById('root'));
+</script>
+
+
+</body>
+</html>
